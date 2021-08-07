@@ -6,6 +6,7 @@ public class Node {
     String name;
     int index;
     boolean isVisited = false;
+    Node parent;
 
     ArrayList<Node> neighbours = new ArrayList<Node>();
 

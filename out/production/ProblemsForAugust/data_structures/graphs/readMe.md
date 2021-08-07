@@ -61,3 +61,46 @@ Note: Preventive Checks needed to prevent infinite looping.
 Sort given actions in such a way that if there is a
 dependency of one action on another, then the dependent
 action always comes later than its parent action.
+* TC: O(V + E)
+* SC: O(V + E)
+
+## Important Algorithms
+
+### Single Source Shortest Path Algorithm: 
+Finding a path between a given vertex (called source) to all other
+vertices in a graph such that the total distance between them (source and destination)
+is minimum.
+Ex -> Five offices in different cities. Given the Travel costs between the different cities, 
+find the cheapest way from head office to branches in different
+cities.
+
+* 3 commonly known solution by
+1. BFS
+   enqueue any starting vertex
+   while queue is not empty:
+      p = dequeue()
+      if p is not visited:
+         mark it as visited
+         enqueue all adj vertices of p 
+         update parent of adj vertices to curVertex
+2. Dijkstra's Algorithm
+3. Bellman Ford
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
