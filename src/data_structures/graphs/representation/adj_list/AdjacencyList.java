@@ -23,5 +23,6 @@ public class AdjacencyList {
         g.bfs();
         System.out.println("\nDFS Traversal: ");
         g.dfs();
+
     }
 }

@@ -53,3 +53,11 @@ Note: Preventive Checks needed to prevent infinite looping.
     * if p is not visited:
         * mark as visited
         * push all adjacent Vertices of p
+   * Time Complexity: O(V+E)
+   * Space Complexity: O(V + E)
+   
+------
+### Topological Sorting
+Sort given actions in such a way that if there is a
+dependency of one action on another, then the dependent
+action always comes later than its parent action.

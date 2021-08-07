@@ -102,4 +102,35 @@ public class Graph {
             }
         }
     }
+
+    // Topological sorting
+    public void addDirectedEdge(int i, int j) {
+        adjacencyMatrix[i][j] = 1;
+    }
+
+    void topologicalVisit(Node node, Stack<Node> stack) {
+        ArrayList<Node> neigbours = getNeighbours(node);
+        for (Node neighbour: neigbours
+             ) {
+            if(!neighbour.isVisited) {
+                topologicalVisit(neighbour, stack);
+            }
+        }
+        node.isVisited = true;
+        stack.push(node);
+    }
+
+    public void topologicalSort() {
+        Stack<Node> stack = new Stack<Node>();
+        for (Node node: nodeList
+             ) {
+            if (!node.isVisited) {
+                topologicalVisit(node, stack);
+            }
+        }
+
+        while (!stack.isEmpty()) {
+            System.out.print(stack.pop().name + " ");
+        }
+    }
 }
