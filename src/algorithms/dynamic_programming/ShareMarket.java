@@ -1,4 +1,4 @@
-package dynamic_programming;
+package algorithms.dynamic_programming;
 
 /**
  * Array in which ith element is price of stock on ith data.

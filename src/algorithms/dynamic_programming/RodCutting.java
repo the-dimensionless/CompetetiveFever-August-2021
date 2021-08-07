@@ -1,4 +1,4 @@
-package dynamic_programming;
+package algorithms.dynamic_programming;
 
 /**
  * Given a rod of length 'n' inches and an array of prices. Array contains

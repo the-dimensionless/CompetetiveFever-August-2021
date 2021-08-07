@@ -1,4 +1,4 @@
-package dynamic_programming;
+package algorithms.dynamic_programming;
 
 /**
  * A burglar comes to your colony at night. Your colony has many houses arranged

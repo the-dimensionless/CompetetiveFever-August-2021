@@ -1,4 +1,4 @@
-package dynamic_programming;
+package algorithms.dynamic_programming;
 
 /**
  * 2 X N grid and infinite dominoes of each size 1x2.

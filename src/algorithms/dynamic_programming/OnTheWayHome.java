@@ -1,6 +1,4 @@
-package dynamic_programming;
-
-import java.util.Arrays;
+package algorithms.dynamic_programming;
 
 /**
  * Imagine a MxN grid where we can move either right or down at any point in time.

@@ -1,4 +1,4 @@
-package dynamic_programming;
+package algorithms.dynamic_programming;
 
 /**
  * Same as prev. find lowest fee in order to reach heaven.

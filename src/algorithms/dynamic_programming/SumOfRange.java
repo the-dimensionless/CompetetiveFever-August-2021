@@ -1,6 +1,4 @@
-package dynamic_programming;
-
-import java.sql.SQLOutput;
+package algorithms.dynamic_programming;
 
 /**
  * Given an integer array, find sum of elements between indices i and j (i<=j) inclusive.
