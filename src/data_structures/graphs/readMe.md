@@ -28,7 +28,7 @@ In memory of,
 * If number of edges are few then -> use Adj List
   
 ## Traversal
-Note: Preventive Checks are needed to prevent infinite looping.
+Note: Preventive Checks needed to prevent infinite looping.
 
 1. BFS (Breadth First Search)
    Start at any node and explore all the neighbours at CURRENT LEVEL
@@ -40,6 +40,18 @@ Note: Preventive Checks are needed to prevent infinite looping.
       * if p is unvisited:
          * mark it visited
          * enqueue all adjacent unvisited vertices of p
+    
+    * Time Complexity: O(V) + O(E) = O(V+E)
+    * Space Complexity: O(V+E)
+    
 2. DFS (Depth First Search)
-
-
+   Start at any node and explore as far as possible
+   along each edge before backtracking.
+   * Push any starting vertex on a Stack
+   * while stack is not empty:
+    * p = pop()
+    * if p is not visited:
+        * mark as visited
+        * push all adjacent Vertices of p
+   * Time Complexity: O(V+E)
+   * Space Complexity: O(V + E)

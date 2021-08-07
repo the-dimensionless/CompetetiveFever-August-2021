@@ -1,6 +1,8 @@
 package data_structures.graphs.representation.adj_list;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Stack;
 
 public class Graph {
     ArrayList<Node> nodeList = new ArrayList<Node>();
@@ -33,5 +35,62 @@ public class Graph {
             s.append("\n");
         }
         return s.toString();
+    }
+
+    // BFS internal use
+    void bfsVisit(Node node) {
+        LinkedList<Node> queue = new LinkedList<Node>();
+        queue.add(node);
+
+        while(!queue.isEmpty()) {
+            Node currentNode = queue.remove(0);
+            currentNode.isVisited = true;
+            System.out.print(currentNode.name + " => ");
+            for (Node neighbour:
+                 currentNode.neighbours) {
+                if (!neighbour.isVisited) {
+                    neighbour.isVisited = true;
+                    queue.add(neighbour);
+                }
+            }
+        }
+    }
+
+    void bfs() {
+        for (Node node:
+             nodeList) {
+            if (!node.isVisited) {
+                bfsVisit(node);
+            }
+        }
+    }
+
+    // DFS internal
+
+    void dfsVisit(Node node) {
+        Stack<Node> stack = new Stack<Node>();
+        stack.push(node);
+
+        while(!stack.isEmpty()) {
+            Node currentNode = stack.pop();
+            currentNode.isVisited = true;
+            System.out.print(currentNode.name + " ");
+            for (Node neighbour: currentNode.neighbours
+                 ) {
+                if (!neighbour.isVisited) {
+                    neighbour.isVisited = true;
+                    stack.push(neighbour);
+                }
+            }
+        }
+    }
+
+    void dfs() {
+        for (Node node: nodeList
+             ) {
+            if (!node.isVisited) {
+                dfsVisit(node);
+            }
+        }
     }
 }

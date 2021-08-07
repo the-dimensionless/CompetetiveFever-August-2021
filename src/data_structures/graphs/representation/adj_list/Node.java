@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Node {
     String name;
     int index;
+    boolean isVisited = false;
 
     ArrayList<Node> neighbours = new ArrayList<Node>();
 

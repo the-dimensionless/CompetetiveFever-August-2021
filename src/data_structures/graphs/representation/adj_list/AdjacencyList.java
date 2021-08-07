@@ -19,5 +19,9 @@ public class AdjacencyList {
         g.addUndirectedEdge(2, 3);
         g.addUndirectedEdge(3, 4);
         System.out.println("<<<<Graph>>>>\n" + g.toString());
+        System.out.println("BFS Traversal: ");
+        g.bfs();
+        System.out.println("\nDFS Traversal: ");
+        g.dfs();
     }
 }

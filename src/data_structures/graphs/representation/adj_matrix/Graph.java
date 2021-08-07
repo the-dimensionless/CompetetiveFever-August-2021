@@ -1,6 +1,8 @@
 package data_structures.graphs.representation.adj_matrix;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Stack;
 
 public class Graph {
     ArrayList<Node> nodeList = new ArrayList<Node>();
@@ -32,5 +34,72 @@ public class Graph {
             s.append("\n");
         }
         return s.toString();
+    }
+
+    // utility to get neighbours
+    public ArrayList<Node> getNeighbours(Node node) {
+        ArrayList<Node> neighbours = new ArrayList<Node>();
+        int nodeIndex = node.index;
+        for (int i = 0; i < adjacencyMatrix.length; i++) {
+            if (adjacencyMatrix[nodeIndex][i] == 1) {
+                neighbours.add(nodeList.get(i));
+            }
+        }
+        return neighbours;
+    }
+
+    // bfs internal
+    void bfsVisit(Node node) {
+        LinkedList<Node> queue = new LinkedList<Node>();
+        queue.add(node);
+        while(!queue.isEmpty()) {
+            Node currentNode = queue.remove(0);
+            currentNode.isVisited = true;
+            System.out.print(currentNode.name+ " -> ");
+            ArrayList<Node> neighbours = getNeighbours(currentNode);
+            for (Node neighbour: neighbours) {
+                if (!neighbour.isVisited) {
+                    neighbour.isVisited = true;
+                    queue.add(neighbour);
+                }
+            }
+        }
+    }
+
+    public void bfs() {
+        for (Node node: nodeList) {
+            if (!node.isVisited) {
+                bfsVisit(node);
+            }
+        }
+    }
+
+    // dfs internal
+    void dfs(Node node) {
+        Stack<Node> stack = new Stack<Node>();
+        stack.push(node);
+
+        while(!stack.isEmpty()) {
+            Node currentNode = stack.pop();
+            currentNode.isVisited = true;
+            System.out.print(currentNode.name + " => ");
+
+            for (Node neighbour: getNeighbours(currentNode)
+                 ) {
+                if (!neighbour.isVisited) {
+                    stack.push(neighbour);
+                    neighbour.isVisited = true;
+                }
+            }
+        }
+    }
+
+    void dfs() {
+        for (Node node: nodeList
+             ) {
+            if (!node.isVisited) {
+                dfs(node);
+            }
+        }
     }
 }
