@@ -76,15 +76,23 @@ cities.
 
 * 3 commonly known solution by
 1. BFS
+   * For (directed/undirected) NON-WEIGHTED graphs
    enqueue any starting vertex
    while queue is not empty:
       p = dequeue()
       if p is not visited:
          mark it as visited
          enqueue all adj vertices of p 
-         update parent of adj vertices to curVertex
+         update parent of all the adj vertices to curVertex
+     TC: O(Edges)
+     SC: O(Vertices)
+     
 2. Dijkstra's Algorithm
 3. Bellman Ford
+
+// no DFS as it never finds shortest path, instead goes as far as 
+possible from reference vertex.
+
 
 
 
